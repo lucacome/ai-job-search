@@ -1,0 +1,217 @@
+[
+  {
+    "ats": "greenhouse",
+    "ats_id": "stripe",
+    "careers_url": "https://stripe.com/jobs/search",
+    "locations_filter": [],
+    "name": "Stripe",
+    "notes": "Real, public Greenhouse board verified 2026-08-01. Used here only as a worked example of the greenhouse ats type."
+  },
+  {
+    "ats": "greenhouse",
+    "ats_id": "coinbase",
+    "careers_url": "https://www.coinbase.com/careers/positions",
+    "locations_filter": [],
+    "name": "Coinbase",
+    "notes": "Real, public Greenhouse board verified 2026-08-01."
+  },
+  {
+    "ats": "generic",
+    "ats_id": "Visa",
+    "careers_url": "https://corporate.visa.com/en/careers.html",
+    "locations_filter": [],
+    "name": "Visa"
+  },
+  {
+    "ats": "greenhouse",
+    "ats_id": "canonical",
+    "careers_url": "https://canonical.com/careers",
+    "locations_filter": [],
+    "name": "Canonical",
+    "notes": "Not verified as greenhouse - 2026-10-07"
+  },
+  {
+    "ats": "greenhouse",
+    "ats_id": "vercel",
+    "careers_url": "https://vercel.com/careers",
+    "locations_filter": [],
+    "name": "Vercel",
+    "notes": "Not verified as greenhouse - 2026-10-07"
+  },
+  {
+    "ats": "greenhouse",
+    "ats_id": "cloudflare",
+    "careers_url": "https://www.cloudflare.com/careers/",
+    "locations_filter": [],
+    "name": "Cloudflare",
+    "notes": "Verified as greenhouse - 2026-10-07"
+  },
+  {
+    "ats": "ashby",
+    "ats_id": "notion",
+    "careers_url": "https://www.notion.so/careers",
+    "locations_filter": [],
+    "name": "Notion",
+    "notes": "Verified as ashby - 2026-10-07"
+  },
+  {
+    "ats": "ashby",
+    "ats_id": "langchain",
+    "careers_url": "https://www.langchain.com/careers",
+    "locations_filter": [],
+    "name": "LangChain",
+    "notes": "Verified as ashby - 2026-10-07"
+  },
+  {
+    "ats": "generic",
+    "ats_id": "spotify",
+    "careers_url": "https://www.spotify.com/us/jobs/",
+    "locations_filter": [],
+    "name": "Spotify",
+    "notes": "Not verified as generic - 2026-10-07"
+  },
+  {
+    "ats": "lever",
+    "ats_id": "zoox",
+    "careers_url": "https://www.zoox.com/careers",
+    "locations_filter": [],
+    "name": "Zoox",
+    "notes": "Verified as lever - 2026-10-07"
+  },
+  {
+    "ats": "ashby",
+    "ats_id": "docker",
+    "careers_url": "https://www.docker.com/careers",
+    "locations_filter": [],
+    "name": "Docker",
+    "notes": "Verified as ashby - 2026-10-07"
+  },
+  {
+    "ats": "greenhouse",
+    "ats_id": "tailscale",
+    "careers_url": "https://www.tailscale.com/careers",
+    "locations_filter": [],
+    "name": "Tailscale",
+    "notes": "Verified as greenhouse - 2026-10-07"
+  },
+  {
+    "ats": "greenhouse",
+    "ats_id": "chime",
+    "careers_url": "https://www.chime.com/careers",
+    "locations_filter": [],
+    "name": "Chime",
+    "notes": "Verified as greenhouse - 2026-10-07"
+  },
+  {
+    "ats": "greenhouse",
+    "ats_id": "anthropic",
+    "careers_url": "https://www.anthropic.com/careers",
+    "locations_filter": [],
+    "name": "Anthropic",
+    "notes": "Verified as greenhouse - 2026-10-07"
+  },
+  {
+    "ats": "greenhouse",
+    "ats_id": "zscaler",
+    "careers_url": "https://www.zscaler.com/careers",
+    "locations_filter": [],
+    "name": "Zscaler",
+    "notes": "Verified as greenhouse - 2026-10-07. Added because entracareers.com misreported this employer's Sr. DevOps Engineer as San Francisco when the underlying Greenhouse req is in Tel Aviv-Yafo, Israel. Greenhouse exposes real geography, so reading Zscaler here rather than through an aggregator is the fix. US roles are San Jose, CA (Bay Area) plus Remote-USA."
+  },
+  {
+    "ats": "greenhouse",
+    "ats_id": "affirm",
+    "careers_url": "https://www.affirm.com/careers",
+    "locations_filter": [],
+    "name": "Affirm",
+    "notes": "Verified as greenhouse - 2026-10-07"
+  },
+  {
+    "ats": "greenhouse",
+    "ats_id": "doordashusa",
+    "careers_url": "https://www.doordash.com/careers",
+    "locations_filter": [],
+    "name": "DoorDash",
+    "notes": "Verified as greenhouse - 2026-10-08"
+  },
+  {
+    "ats": "ashby",
+    "ats_id": "coder",
+    "careers_url": "https://coder.com/careers",
+    "locations_filter": [],
+    "name": "Coder",
+    "notes": "Verified as ashby - 2026-10-08"
+  },
+  {
+    "ats": "ashby",
+    "ats_id": "thumbtack",
+    "careers_url": "https://www.thumbtack.com/careers",
+    "locations_filter": [],
+    "name": "Thumbtack",
+    "notes": "Verified as ashby - 2026-10-08"
+  },
+  {
+    "ats": "greenhouse",
+    "ats_id": "digitalocean98",
+    "careers_url": "https://www.digitalocean.com/careers",
+    "locations_filter": [],
+    "name": "DigitalOcean",
+    "notes": "Verified as greenhouse - 2026-10-08"
+  },
+  {
+    "ats": "greenhouse",
+    "ats_id": "riotgames",
+    "careers_url": "https://www.riotgames.com/careers",
+    "locations_filter": [],
+    "name": "Riot Games",
+    "notes": "Verified as greenhouse - 2026-10-08"
+  },
+  {
+    "ats": "greenhouse",
+    "ats_id": "roblox",
+    "careers_url": "https://careers.roblox.com/",
+    "locations_filter": [],
+    "name": "Roblox",
+    "notes": "Verified as greenhouse - 2026-10-08"
+  },
+  {
+    "ats": "greenhouse",
+    "ats_id": "hpiq",
+    "careers_url": "https://www.hp-iq.com/careers",
+    "locations_filter": [],
+    "name": "HP IQ",
+    "notes": "Verified as greenhouse - 2026-10-08"
+  },
+  {
+    "ats": "ashby",
+    "ats_id": "sierra",
+    "careers_url": "https://sierra.ai/careers",
+    "locations_filter": [],
+    "name": "Sierra",
+    "notes": "Verified as ashby - 2026-10-13"
+  },
+  {
+    "ats": "ashby",
+    "ats_id": "prelim",
+    "careers_url": "https://jobs.ashbyhq.com/prelim",
+    "locations_filter": [],
+    "name": "Prelim",
+    "notes": "Verified as ashby - 2026-10-13; added when the user handed over a single Prelim posting URL."
+  },
+  {
+    "ats": "greenhouse",
+    "ats_id": "smartsheet",
+    "careers_url": "https://www.smartsheet.com/careers",
+    "locations_filter": [],
+    "name": "Smartsheet",
+    "notes": "Verified as greenhouse - 2026-10-15"
+  },
+  {
+    "ats": "greenhouse",
+    "ats_id": "airbnb",
+    "careers_url": "https://careers.airbnb.com/",
+    "locations_filter": [],
+    "name": "Airbnb",
+    "notes": "Verified as greenhouse - 2026-10-18"
+  }
+]

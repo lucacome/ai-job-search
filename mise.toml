@@ -1,0 +1,26 @@
+[tools]
+bun = "latest"
+uv = "latest"
+typos = "latest"
+"pipx:codespell" = "latest"
+hk = "latest"
+pkl = "latest"
+"aqua:owenlamont/ryl" = "latest"
+
+[env]
+_.python.venv = { path = ".venv", create = true, uv_create_args = ["--seed"] }
+
+[settings]
+python.uv_venv_auto = "create|source"
+idiomatic_version_file_enable_tools = ["python"]
+
+
+[tasks.lint]
+alias = "l"
+description = "Lint the codebase"
+run = "hk check --all"
+
+[tasks.format]
+alias = "fmt"
+description = "Format the codebase"
+run = "hk fix --all"

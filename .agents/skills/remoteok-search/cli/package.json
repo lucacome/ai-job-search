@@ -1,0 +1,20 @@
+{
+  "bin": {
+    "remoteok-search": "src/cli.ts"
+  },
+  "dependencies": {},
+  "description": "CLI for searching remote job postings on RemoteOK (remoteok.com) via its public JSON API and job posting pages — no authentication, zero runtime dependencies. Attribution required by RemoteOK's API terms.",
+  "devDependencies": {
+    "@types/bun": "1.3.14",
+    "typescript": "^5.4.0"
+  },
+  "main": "src/cli.ts",
+  "name": "remoteok-cli",
+  "scripts": {
+    "start": "bun run src/cli.ts",
+    "test": "bun test --timeout 30000",
+    "typecheck": "tsc --noEmit"
+  },
+  "type": "module",
+  "version": "1.0.0"
+}
