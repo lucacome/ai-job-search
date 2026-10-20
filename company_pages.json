@@ -213,5 +213,29 @@
     "locations_filter": [],
     "name": "Airbnb",
     "notes": "Verified as greenhouse - 2026-10-18"
+  },
+  {
+    "ats": "ashby",
+    "ats_id": "openrouter",
+    "careers_url": "https://openrouter.ai/careers",
+    "locations_filter": [],
+    "name": "OpenRouter",
+    "notes": "Verified as ashby - 2026-10-19"
+  },
+  {
+    "ats": "ashby",
+    "ats_id": "ollama",
+    "careers_url": "https://ollama.com/careers",
+    "locations_filter": [],
+    "name": "Ollama",
+    "notes": "Verified as ashby - 2026-10-19"
+  },
+  {
+    "ats": "greenhouse",
+    "ats_id": "ngrokinc",
+    "careers_url": "https://ngrok.com/careers",
+    "locations_filter": [],
+    "name": "ngrok",
+    "notes": "Verified as greenhouse - 2026-10-19"
   }
 ]
