@@ -1,0 +1,68 @@
+amends "package://github.com/jdx/hk/releases/download/v2.7.1/hk@2.7.1#/Config.pkl"
+
+import "package://github.com/jdx/hk/releases/download/v2.7.1/hk@2.7.1#/Builtins.pkl"
+
+exclude =
+  List(
+    "dist",
+    "lib",
+    "node_modules",
+    "job_scraper",
+    ".agents/skills/jobbank-search",
+    ".agents/skills/jobdanmark-search",
+    ".agents/skills/jobnet-search",
+  )
+
+local linters = new Mapping<String, Step> {
+  ["check-case-conflict"] = Builtins.check_case_conflict
+  ["check-json"] = Builtins.jq
+  ["check-symlinks"] = Builtins.check_symlinks
+  ["destroyed-symlinks"] = Builtins.destroyed_symlinks
+  ["end-of-file-fixer"] = Builtins.newlines
+  ["fix-smart-quotes"] = Builtins.fix_smart_quotes
+  ["mise"] = Builtins.mise
+  ["mixed-line-ending"] = Builtins.mixed_line_ending
+  ["pkl-lint"] = Builtins.pkl_format
+  ["trailing-whitespace"] = Builtins.trailing_whitespace
+  ["typos"] = (Builtins.typos) {
+    exclude = List(".agents/skills/**")
+  }
+  ["codespell"] {
+    check =
+      "codespell --ignore-words-list=commitish --quiet-level=7 --skip=./dist/**,./lib/**,./node_modules/** {{files}}"
+    fix =
+      "codespell --ignore-words-list=commitish --quiet-level=7 --write-changes --skip=./dist/**,./lib/**,./node_modules/** {{files}}"
+  }
+}
+
+local precommit = new Mapping<String, Step> {
+  ["betterleaks"] = Builtins.betterleaks
+  ["check-merge-conflict"] = Builtins.check_merge_conflict
+  ["detect-private-key"] = Builtins.detect_private_key
+}
+
+hooks {
+  ["pre-commit"] {
+    fix = true
+    stash = "git"
+    steps {
+      ["linters"] = new Group {
+        steps = linters
+      }
+      ["precommit"] = new Group {
+        steps = precommit
+      }
+    }
+  }
+  ["check"] {
+    steps {
+      ...linters
+    }
+  }
+  ["fix"] {
+    fix = true
+    steps {
+      ...linters
+    }
+  }
+}
