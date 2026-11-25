@@ -67,17 +67,11 @@ errors: list[str] = []
 # an entry must add it here too - that is the point: the diff shows both.
 ALLOWED_PERMISSIONS = {
     "Skill(job-application-assistant)",
-    # Narrowed from the upstream template's blanket Bash(bun run:*), which
-    # pre-approved `bun run <any file>`. One entry per shipped portal CLI,
-    # matching what each SKILL.md already declares in its allowed-tools.
-    # A portal added by /add-portal needs its own entry here and in
-    # .claude/settings.json - that review step is the point.
-    "Bash(bun run .agents/skills/jobbank-search/cli/src/cli.ts:*)",
-    "Bash(bun run .agents/skills/jobdanmark-search/cli/src/cli.ts:*)",
-    "Bash(bun run .agents/skills/jobindex-search/cli/src/cli.ts:*)",
-    "Bash(bun run .agents/skills/jobnet-search/cli/src/cli.ts:*)",
-    "Bash(bun run .agents/skills/linkedin-search/cli/src/cli.ts:*)",
-    "Bash(bun run .agents/skills/freehire-search/cli/src/cli.ts:*)",
+    # No portal CLI ships here (they live in ai-job-search-dev/community-portals),
+    # and no blanket Bash(bun run:*), which pre-approved `bun run <any file>`.
+    # A fork's portal is pre-approved only inside its own skill (_own_cli_grant);
+    # for /scrape, /apply and /rank it adds `Bash(bun run .agents/skills/<name>/cli/src/cli.ts:*)`
+    # here and in .claude/settings.json, per /add-portal.
     "Bash(python salary_lookup.py:*)",
     "Bash(python3 salary_lookup.py:*)",
     "Bash(python tools/rank_state.py:*)",
@@ -103,6 +97,10 @@ ALLOWED_PERMISSIONS = {
     # Reads a file or stdin, writes only to an explicit --out, never fetches.
     "Bash(python tools/posting_guard.py:*)",
     "Bash(python3 tools/posting_guard.py:*)",
+    # /html-report. Reads the tracker and archives, writes one .html file;
+    # the script refuses any --out that does not end in .html.
+    "Bash(python tools/html_report.py:*)",
+    "Bash(python3 tools/html_report.py:*)",
 }
 
 # Rules that must stay in .claude/settings.json permissions.ask. An ask rule
@@ -409,7 +407,9 @@ def check_skill_tool_grants() -> None:
     skills = sorted(ROOT.glob(".claude/skills/*/SKILL.md")) + sorted(
         ROOT.glob(".agents/skills/*/SKILL.md")
     )
-    commands = sorted((ROOT / ".claude" / "commands").glob("*.md"))
+    # rglob, not glob: Claude Code loads namespaced commands from subfolders of
+    # .claude/commands/, so a grant in commands/ops/evil.md is live too.
+    commands = sorted((ROOT / ".claude" / "commands").rglob("*.md"))
     for path in skills + commands:
         rel = path.relative_to(ROOT).as_posix()
         try:
@@ -714,8 +714,6 @@ def check_package_manifests() -> None:
     manifests = [
         p for p in ROOT.glob(".agents/**/package.json") if "node_modules" not in p.parts
     ]
-    if not manifests:
-        errors.append(".agents: no package.json files found - glob roots are wrong or the tree moved")
     for manifest in manifests:
         relpath = manifest.relative_to(ROOT)
         try:
@@ -785,7 +783,7 @@ def check_tracked_node_modules() -> None:
 
 
 def check_agent_tool_grants() -> None:
-    for path in sorted((ROOT / ".claude" / "agents").glob("*.md")):
+    for path in sorted((ROOT / ".claude" / "agents").rglob("*.md")):
         rel = path.relative_to(ROOT).as_posix()
         try:
             data = _frontmatter(path.read_text(encoding="utf-8"))
